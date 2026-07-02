@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { Sparkles, ArrowRight, Search, FileSearch, MessageSquare, Users } from "lucide-react";
+import { Sparkles, ArrowRight, Search, FileSearch, MessageSquare, Users, Mail, Instagram, Twitter, Linkedin } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export const Route = createFileRoute("/")({
@@ -69,7 +69,7 @@ function Landing() {
           <img
             src="/logo.png"
             alt="Logo"
-            className="h-9 w-auto max-w-full object-contain rounded-xl"
+            className="h-12 w-auto max-w-full object-contain rounded-xl"
           />
         </Link>
         <div className="flex items-center gap-2">
@@ -127,9 +127,93 @@ function Landing() {
         </div>
       </section>
 
-      <footer className="relative border-t border-border/40 py-8 text-center text-xs text-muted-foreground">
-        © CabbageCode · Outreach respects every destination platform's TOS and requires your review
-        before sending.
+      <footer className="relative border-t border-border/40 bg-background/30 backdrop-blur-md mt-auto">
+        <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
+            {/* Column 1: Logo & Description */}
+            <div className="space-y-4 col-span-1 md:col-span-2">
+              <Link to="/" className="flex items-center">
+                <img
+                  src="/logo.png"
+                  alt="Logo"
+                  className="h-12 w-auto max-w-full object-contain rounded-xl"
+                />
+              </Link>
+              <p className="text-sm text-muted-foreground max-w-sm mt-3">
+                Discover local businesses, automate website audits with AI, draft personalized outreach, and manage leads in one premium CRM.
+              </p>
+            </div>
+
+            {/* Column 2: Legal/Links */}
+            <div className="space-y-3">
+              <h4 className="text-sm font-semibold tracking-wider uppercase text-foreground">Legal & Docs</h4>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link to="/privacy" className="text-muted-foreground hover:text-primary transition-colors">
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/terms" className="text-muted-foreground hover:text-primary transition-colors">
+                    Terms of Service
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Column 3: Contact & Socials */}
+            <div className="space-y-3">
+              <h4 className="text-sm font-semibold tracking-wider uppercase text-foreground">Connect</h4>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="mailto:sujeet.cabbagecode@gmail.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="p-2.5 rounded-xl bg-primary/5 hover:bg-primary/10 border border-border/40 hover:border-primary/30 text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-105 shadow-sm"
+                  aria-label="Email Us"
+                >
+                  <Mail className="h-5 w-5" />
+                </a>
+                <a
+                  href="https://x.com/sujeetv23936479"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="p-2.5 rounded-xl bg-primary/5 hover:bg-primary/10 border border-border/40 hover:border-primary/30 text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-105 shadow-sm"
+                  aria-label="Twitter / X"
+                >
+                  <Twitter className="h-5 w-5" />
+                </a>
+                <a
+                  href="https://www.instagram.com/cabbage_code/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="p-2.5 rounded-xl bg-primary/5 hover:bg-primary/10 border border-border/40 hover:border-primary/30 text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-105 shadow-sm"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="h-5 w-5" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/sujeet-vishwakarma-a19b2323a/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="p-2.5 rounded-xl bg-primary/5 hover:bg-primary/10 border border-border/40 hover:border-primary/30 text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-105 shadow-sm"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 pt-8 border-t border-border/20 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+            <span className="text-xs text-muted-foreground">
+              © {new Date().getFullYear()} CabbageCode. All rights reserved.
+            </span>
+            <span className="text-xs text-muted-foreground max-w-md">
+              Outreach respects destination platform TOS and requires review prior to transmission.
+            </span>
+          </div>
+        </div>
       </footer>
     </div>
   );

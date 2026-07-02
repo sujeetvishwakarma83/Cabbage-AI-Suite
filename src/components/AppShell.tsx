@@ -75,7 +75,7 @@ function SidebarInner() {
           <img
             src="/logo.png"
             alt="Logo"
-            className="h-9 w-auto max-w-full object-contain rounded-xl"
+            className="h-12 w-auto max-w-full object-contain rounded-xl"
           />
         </div>
       </SidebarHeader>
